@@ -1,2 +1,2 @@
-"""Service integrations for API communication."""
+"""Service layer placeholders for API integrations."""
 
