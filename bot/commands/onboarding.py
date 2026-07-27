@@ -9,6 +9,7 @@ class test_modal(ui.Modal, title='test input 2'):
     name2 = ui.TextInput(label='shit2')
     name3 = ui.TextInput(label='shit3')
     name4 = ui.TextInput(label='shit4')
+    name5 = ui.TextInput(label='shit5')
 
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
