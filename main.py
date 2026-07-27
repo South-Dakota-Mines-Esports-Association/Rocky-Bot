@@ -26,7 +26,6 @@ async def on_ready():
 
 @bot.event
 async def setup_hook():
-    print(bot.tree)
     register_commands(bot.tree)
     synced = await bot.tree.sync()
     print(synced)
