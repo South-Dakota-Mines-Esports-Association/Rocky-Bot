@@ -170,12 +170,3 @@ async def member_ping(interaction: discord.Interaction, student_id: int):
     await execute_api_command(interaction, 'Ping Member', 'POST', f'/members/ping/{student_id}')
 
 
-@member_group.command(name='pong', description='Retrieve the last active date of a member.')
-async def member_pong(interaction: discord.Interaction, student_id: int):
-    try:
-        require_positive_int(student_id, 'Student ID')
-    except ValueError as exc:
-        await send_validation_error(interaction, exc)
-        return
-
-    await execute_api_command(interaction, 'Pong Member', 'GET', f'/members/pong/{student_id}')
