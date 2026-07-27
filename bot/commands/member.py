@@ -167,6 +167,6 @@ async def member_ping(interaction: discord.Interaction, student_id: int):
         await send_validation_error(interaction, exc)
         return
 
-    await execute_api_command(interaction, 'Ping Member', 'POST', f'/members/ping/{student_id}')
+    await execute_api_command(interaction, 'Ping Member', 'GET', f'/members/ping/{student_id}')
 
 
