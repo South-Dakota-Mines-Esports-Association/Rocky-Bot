@@ -1,5 +1,5 @@
 import discord
-from member import _validate_member_email
+from .member import _validate_member_email
 from discord import app_commands
 from discord import ui
 
