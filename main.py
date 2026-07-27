@@ -29,6 +29,7 @@ async def setup_hook():
     print(bot.tree)
     register_commands(bot.tree)
     synced = await bot.tree.sync()
+    print(synced)
     print(f'Synced {len(synced)} slash command(s).')
 
 
