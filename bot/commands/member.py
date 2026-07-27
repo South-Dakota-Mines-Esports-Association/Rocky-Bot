@@ -157,3 +157,7 @@ async def member_delete(interaction: discord.Interaction, student_id: int):
         return
 
     await execute_api_command(interaction, 'Delete Member', 'DELETE', f'/members/{student_id}')
+
+@member_group.command(name='testerest', description='fuck my life')
+async def member_testerest(interaction: discord.Interaction):
+    await interaction.response.send_message('I can do anything!!', ephemeral=True)
