@@ -16,7 +16,7 @@ class test_modal(ui.Modal, title='test input 2'):
 
     async def on_submit(self, interaction: discord.Interaction):
         try:
-            _validate_member_email(self.emailAddress,self.firstName,self.lastName)
+            _validate_member_email(self.emailAddress.value,self.firstName.value,self.lastName.value)
         except ValueError as e:
             await interaction.response.send_message(e)
             return
