@@ -8,14 +8,15 @@ onboarding_group = app_commands.Group(
 )
 
 class test_modal(ui.Modal, title='test input 2'):
-    name = ui.TextInput(label='shit')
-    name2 = ui.TextInput(label='shit2')
-    name3 = ui.TextInput(label='shit3')
+    firstName = ui.TextInput(label='First Name')
+    lastName = ui.TextInput(label='Last Name')
+    emailAddress = ui.TextInput(label='Email Address')
+    classStanding = ui.TextInput(label='Class Stading')
 
     async def on_submit(self, interaction: discord.Interaction):
 
         await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
-        print(self.name,self.name2,self.name3)
+        await interaction.response.send_message(f'Here is your data {self.firstName}, {self.lastName}, {self.emailAddress}, {self.classStanding}')
 
 @onboarding_group.command(name='input',description='using the first inputmethod')
 async def onboarding_input(interaction:discord.Interaction):
