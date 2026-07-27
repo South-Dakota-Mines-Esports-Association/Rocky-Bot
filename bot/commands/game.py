@@ -21,10 +21,6 @@ game_group = app_commands.Group(name='game', description='CRUD operations for ga
 async def game_list(interaction: discord.Interaction):
     await execute_api_command(interaction, 'List Games', 'GET', '/games')
 
-@game_group.command(name='test', description='Testing some different stuff with commands')
-async def game_test(interaction: discord.Interaction):
-    await interaction.response.send_message('I could do anything!!', ephemeral=True)
-
 
 @game_group.command(name='create', description='Create a game record.')
 async def game_create(interaction: discord.Interaction):
