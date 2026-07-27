@@ -170,7 +170,7 @@ async def member_ping(interaction: discord.Interaction, student_id: int):
     await execute_api_command(interaction, 'Ping Member', 'GET', f'/members/ping/{student_id}')
 
 
-@member_group.command(name='getActive', description='Check how long since a user was active.')
+@member_group.command(name='get_active', description='Check how long since a user was active.')
 async def member_get_active(interaction: discord.Interaction, student_id: int):
     try:
         require_positive_int(student_id, 'Student ID')
