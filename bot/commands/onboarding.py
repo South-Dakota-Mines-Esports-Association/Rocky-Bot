@@ -11,12 +11,12 @@ class test_modal(ui.Modal, title='test input 2'):
     firstName = ui.TextInput(label='First Name')
     lastName = ui.TextInput(label='Last Name')
     emailAddress = ui.TextInput(label='Email Address')
-    classStanding = ui.TextInput(label='Class Stading')
+    classStanding = ui.TextInput(label='Class Standing')
 
     async def on_submit(self, interaction: discord.Interaction):
 
         await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
-        await interaction.response.send_message(f'Here is your data {self.firstName}, {self.lastName}, {self.emailAddress}, {self.classStanding}')
+        await interaction.followup.send_message(f'Here is your data {self.firstName}, {self.lastName}, {self.emailAddress}, {self.classStanding}')
 
 @onboarding_group.command(name='input',description='using the first inputmethod')
 async def onboarding_input(interaction:discord.Interaction):
