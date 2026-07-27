@@ -37,7 +37,7 @@ class test_modal(ui.Modal, title='test input 2'):
             await interaction.response.send_message(e)
             return
 
-        result = execute_api_command(
+        result = await execute_api_command(
             interaction,
             'Test',
             'POST',
