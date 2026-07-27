@@ -13,6 +13,7 @@ from .team import team_group
 from .team_match import team_match_group
 from .team_member import team_member_group
 from .onboarding import onboarding_group
+from .misc2 import goodbye
 
 
 def register_commands(tree: app_commands.CommandTree) -> None:
@@ -29,5 +30,6 @@ def register_commands(tree: app_commands.CommandTree) -> None:
     tree.add_command(query_group)
     tree.add_command(onboarding_group)
     tree.add_command(hello)
+    tree.add_command(goodbye)
 
 

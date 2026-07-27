@@ -2,7 +2,10 @@ import discord
 from discord import app_commands
 from discord import ui
 
-onboarding_group = app_commands.Group(name='onboarding', description='blablahtest - charlie')
+onboarding_group = app_commands.Group(
+    name='onboarding', 
+    description='blablahtest - charlie'
+)
 
 class test_modal(ui.Modal, title='test input 2'):
     name = ui.TextInput(label='shit')
