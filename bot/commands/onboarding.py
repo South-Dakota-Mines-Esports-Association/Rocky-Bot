@@ -1,4 +1,5 @@
 import discord
+from member import _validate_member_email
 from discord import app_commands
 from discord import ui
 
@@ -14,9 +15,15 @@ class test_modal(ui.Modal, title='test input 2'):
     classStanding = ui.TextInput(label='Class Standing')
 
     async def on_submit(self, interaction: discord.Interaction):
+        try:
+            _validate_member_email(self.emailAddress,self.firstName,self.lastName)
+        except ValueError as e:
+            await interaction.response.send_message(e)
+            return
 
-        await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
-        await interaction.followup.send(f'Here is your data {self.firstName}, {self.lastName}, {self.emailAddress}, {self.classStanding}')
+        await interaction.response.send_message('Hi this is email is okay')
+
+
 
 @onboarding_group.command(name='input',description='using the first inputmethod')
 async def onboarding_input(interaction:discord.Interaction):
