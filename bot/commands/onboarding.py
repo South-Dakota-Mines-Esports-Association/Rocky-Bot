@@ -6,6 +6,9 @@ onboarding_group = app_commands.Group(name='onboarding', description='blablahtes
 
 class test_modal(ui.Modal, title='test input 2'):
     name = ui.TextInput(label='shit')
+    name2 = ui.TextInput(label='shit2')
+    name3 = ui.TextInput(label='shit3')
+    name4 = ui.TextInput(label='shit4')
 
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
