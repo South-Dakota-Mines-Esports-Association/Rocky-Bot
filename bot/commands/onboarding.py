@@ -14,7 +14,7 @@ class test_modal(ui.Modal, title='test input 2'):
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.send_message(f'Thanks for your response!', ephemeral=True)
 
-@onboarding_group.command(name='inputmethod1',description='using the first inputmethod')
-async def onboarding_inputmethod1(self, interaction:discord.Interaction):
+@onboarding_group.command(name='input',description='using the first inputmethod')
+async def onboarding_input(interaction:discord.Interaction):
     await interaction.response.send_modal(test_modal(   ))
     return
