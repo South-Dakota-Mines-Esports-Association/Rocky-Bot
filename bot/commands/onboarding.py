@@ -47,8 +47,8 @@ class test_modal(ui.Modal, title='test input 2'):
             request_body = {
                 'student_id': self.studentId.value,
                 'academic_year': self.classStanding.value,
-                #'discord_user_id': str(interaction.user.id),
-                #'discord_username': interaction.user.name,
+                'discord_user_id': str(interaction.user.id),
+                'discord_username': interaction.user.name,
                 'first_name' : self.firstName.value, 
                 'last_name' : self.lastName.value, 
                 'email_address' : self.emailAddress.value
@@ -57,10 +57,17 @@ class test_modal(ui.Modal, title='test input 2'):
 
         await interaction.response.send_message(result)
         
-
+class test_button(ui.view):
+    def __init__(self, *, timeout=180):
+        super().__init__(timeout=timeout)
+    
+    @discord.ui.button(label="Onboarding", style=discord.ButtonStyle.green)
+    async def onboarding_button(self,button:discord.ui.Button,interaction:discord.Interaction):
+        await interaction.response.send_modal(test_modal())
+    
 
 
 @onboarding_group.command(name='input',description='using the first inputmethod')
 async def onboarding_input(interaction:discord.Interaction):
-    await interaction.response.send_modal(test_modal(   ))
+    await interaction.send_message("This is a test onboard", view=test_button())
     return
