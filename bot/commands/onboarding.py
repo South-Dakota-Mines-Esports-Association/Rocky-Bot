@@ -44,7 +44,7 @@ class test_modal(ui.Modal, title='test input 2'):
             '/member',
             params={},
             request_body = {
-                'discord_user_id': str(interaction.user.id).
+                'discord_user_id': str(interaction.user.id),
                 'discord_username': interaction.user.name,
                 'first_name' : self.firstName.value, 
                 'last_name' : self.lastName.value, 
