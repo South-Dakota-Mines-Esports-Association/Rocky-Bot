@@ -62,7 +62,7 @@ class test_button(ui.view):
         super().__init__(timeout=timeout)
     
     @discord.ui.button(label="Onboarding", style=discord.ButtonStyle.green)
-    async def onboarding_button(self,button:discord.ui.Button,interaction:discord.Interaction):
+    async def onboarding_button(self,interaction:discord.Interaction):
         await interaction.response.send_modal(test_modal())
     
 
