@@ -29,6 +29,7 @@ class test_modal(ui.Modal, title='test input 2'):
     lastName = ui.TextInput(label='Last Name')
     emailAddress = ui.TextInput(label='Email Address')
     classStanding = ui.TextInput(label='Class Standing')
+    studentId = ui.TextInput(label='Student ID')
 
     async def on_submit(self, interaction: discord.Interaction):
         try:
@@ -44,6 +45,8 @@ class test_modal(ui.Modal, title='test input 2'):
             '/member',
             params={},
             request_body = {
+                'student_id': self.studentId.value,
+                'academic_year': self.classStanding.value,
                 'discord_user_id': str(interaction.user.id),
                 'discord_username': interaction.user.name,
                 'first_name' : self.firstName.value, 
