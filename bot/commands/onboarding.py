@@ -45,7 +45,6 @@ class test_modal(ui.Modal, title='test input 2'):
             '/member',
             params={},
             request_body = {
-                "academic_year": self.classStanding,
                 "discord_user_id:": str(interaction.user.id),
                 "discord_username": interaction.user.name,
                 "student_id": self.studentId,
